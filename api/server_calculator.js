@@ -47,14 +47,6 @@ http.createServer(async (req, res) => {
 
     const projectPath = path.join(__dirname, '..')
 
-    if ((req.method == 'GET') && (req.url.indexOf("assign_1.html") != -1)) {
-        fs.readFile(projectPath + "\\frontend\\assign_1.html", (err, data) => {
-            res.writeHead(200, { 'Content-type': 'text/html' })
-            res.write(data)
-            res.end()
-        })
-    }
-
     if (req.method == 'GET' && (req.url.indexOf("operation") != -1)) {
         let { firstNumber, secondNumber, operation, clientResult } = parseUrl(req.url)
         let result = 0
