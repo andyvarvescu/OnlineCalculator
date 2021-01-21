@@ -2,6 +2,7 @@
 
 # dependencies
 */node_modules/*
+/.png
 api/history.json
 /.pnp
 .pnp.js
