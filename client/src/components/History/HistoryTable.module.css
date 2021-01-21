@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+.historyTable {
+    display: grid;
+    grid-template-columns: 70px 100px 130px 132px 120px 145px;
+    margin: 0 auto;
+    max-width: 714px;
+    max-height: 94.5vh;
+    border-radius: 5px;
+    border-collapse: collapse;
+    overflow-y: scroll;
+}
+
+.historyTable thead,
+.historyTable tbody,
+.historyTable tr {
+    display: contents;
+}
+
+.historyTable td, .historyTable th {
+    border: 1px solid #ddd;
+}
+
+thead tr:first-child th:first-child {
+    border-radius: 3px 0 0 0;
+}
+
+thead tr:first-child th:last-child {
+    border-radius: 0 3px 0 0;
+}
+
+tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 3px;
+}
+
+tbody tr:last-child td:last-child {
+    border-radius: 0 0 3px 0;
+}
+
+.historyTable th {
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    text-align: left;
+    background-color: #FFFF99;
+}
+
+.historyTable td {
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.historyTable tr:nth-child(odd) td {
+    background: white;
+}
+
+.historyTable tr:nth-child(even) td {
+    background: #f8f6ff;
+}

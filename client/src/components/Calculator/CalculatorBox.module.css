@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+.calculatorBox {
+    margin: auto;
+    margin-top: 10px;
+    min-width: 260px;
+    max-width: 300px;
+    min-height: 320px;
+    max-height: 300px;
+    border-radius: 5px;
+    background-color: #c9c1eb;
+    padding: 10px 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.deleteHistory {
+    display: inline-block;
+    cursor: pointer;
+    background-color: #FFFF99;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 auto;
+    box-shadow: 0 5px #999;
+}
+
+.deleteHistory:active {
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}

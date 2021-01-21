@@ -1,0 +1,11 @@
+/* DESKTOP settings */
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
