@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Operation component connected to redux must render with give state from redux store 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(Operation)
+    operation="Addition"
+  >
+    <Operation
+      firstNumber="0"
+      operation="Addition"
+      secondNumber="0"
+      setFirstNumber={[Function]}
+      setOperation={[Function]}
+      setSecondNumber={[Function]}
+    >
+      <div>
+        <Input
+          label="First number:"
+          name="firstNumber"
+          onChange={[Function]}
+          type="text"
+          value="0"
+        >
+          <label>
+            <label
+              htmlFor="firstNumber"
+            >
+              First number:
+            </label>
+            <input
+              id="firstNumber"
+              name="firstNumber"
+              onChange={[Function]}
+              type="text"
+              value="0"
+            />
+          </label>
+        </Input>
+        <Input
+          label="Second number:"
+          name="secondNumber"
+          onChange={[Function]}
+          type="text"
+          value="0"
+        >
+          <label>
+            <label
+              htmlFor="secondNumber"
+            >
+              Second number:
+            </label>
+            <input
+              id="secondNumber"
+              name="secondNumber"
+              onChange={[Function]}
+              type="text"
+              value="0"
+            />
+          </label>
+        </Input>
+        Operation :
+        <select
+          id="dropdown1"
+          onChange={[Function]}
+          value="Addition"
+        >
+          <option
+            value="Addition"
+          >
+            Add (+)
+          </option>
+          <option
+            value="Subtraction"
+          >
+            Subtract (-)
+          </option>
+          <option
+            value="Multiplication"
+          >
+            Multiply (*)
+          </option>
+          <option
+            value="Division"
+          >
+            Divide (/)
+          </option>
+          <option
+            value="Power"
+          >
+            x to the y power (x^y)
+          </option>
+        </select>
+      </div>
+    </Operation>
+  </Connect(Operation)>
+</Provider>
+`;

@@ -25,7 +25,7 @@ const Operation = (props) => {
                 onChange={setSecondNumber}
             />
 
-            <strong>Operation :</strong>
+            Operation :
             <select
                 id="dropdown1"
                 onChange={(e) => setOperation(e.target.value)}
