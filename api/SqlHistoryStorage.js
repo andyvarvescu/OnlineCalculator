@@ -7,9 +7,10 @@ module.exports = class SqlHistoryStorage {
     }
 
     async createConnection() {
-        return new Promise(async (resolve, reject) => {
-            const con = await mysql.createConnection(this.db);
+        return new Promise((resolve, reject) => {
+            const con = mysql.createConnection(this.db);
 
+            // connect() doesn't return a promise; it can only accept a callback
             con.connect((err) => {
                 if (err) {
                     reject(err);
@@ -45,19 +46,24 @@ module.exports = class SqlHistoryStorage {
         const query = "SELECT * FROM history";
 
         return new Promise(async (resolve, reject) => {
-            const con = await this.createConnection();
-            con.query(query, (err, result) => {
-                con.end();
-                if (err) {
-                    reject(err);
-                } else {
-                    const entries = result.map((entry) => {
-                        return new HistoryEntry(entry.Operation, entry.Number1, entry.Number2, 
-                                        entry.Result, entry.Time_stamp);
-                    });
-                    resolve(entries);
-                };
-            });
+            try {
+                const con = await this.createConnection();
+                con.query(query, (err, result) => {
+                    con.end();
+                    if (err) {
+                        reject(err);
+                    } else {
+                        const entries = result.map((entry) => {
+                            return new HistoryEntry(entry.Operation, entry.Number1, entry.Number2, 
+                                            entry.Result, entry.Time_stamp);
+                        });
+                        resolve(entries);
+                    };
+                });
+            }
+            catch(err) {
+                console.log("Error in creating DB connection: ", err)
+            }
         });
     }
 }

@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes'
+import axios from '../../axiosInstance'
 
 export const fetchHistorySuccess = (history) => ({
     type: actionTypes.FETCH_HISTORY_SUCCESS,
@@ -9,7 +10,7 @@ export const fetchHistorySuccess = (history) => ({
 export const deleteHistory = () => {
     return async (dispatch) => {
         try {
-            await window.axios.get('/server_calculator.js/delHistory')
+            await axios.get('/server_calculator.js/delHistory')
 
             dispatch({ type: actionTypes.DELETE_HISTORY })
         }
@@ -23,7 +24,7 @@ export const deleteHistory = () => {
 export const fetchHistory = () => {
     return async (dispatch) => {
         try {
-            const response = await window.axios.get('/server_calculator.js/getHistory')
+            const response = await axios.get('/server_calculator.js/getHistory')
 
             dispatch(fetchHistorySuccess(response.data))
         }

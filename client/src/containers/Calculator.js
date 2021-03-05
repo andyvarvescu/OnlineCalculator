@@ -7,6 +7,7 @@ import { changeCalculationType, getResult, deleteHistory } from '../store/action
 class Calculator extends Component {
     render() {
         const {
+            firstNumber, secondNumber, operation, 
             serverCalculation, changeCalculationType,
             result, getResult, deleteHistory
         } = this.props
@@ -16,7 +17,7 @@ class Calculator extends Component {
                 serverCalculation={serverCalculation}
                 onCalculationTypeChange={changeCalculationType}
                 result={result}
-                onResultClick={getResult}
+                onResultClick={() => getResult(firstNumber, secondNumber, operation, serverCalculation)}
                 onDeleteHistory={deleteHistory}
             />
         )
@@ -24,6 +25,9 @@ class Calculator extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    firstNumber: state.calc.firstNumber, 
+    secondNumber: state.calc.secondNumber, 
+    operation: state.calc.operation, 
     serverCalculation: state.calc.serverCalculation,
     result: state.calc.result
 })

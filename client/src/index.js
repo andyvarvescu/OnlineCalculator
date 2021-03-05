@@ -4,16 +4,12 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import axios from 'axios'
 
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import calculatorReducer from './store/reducers/calculator'
 import historyReducer from './store/reducers/history'
-
-window.axios = axios
-axios.defaults.baseURL = 'http://192.168.100.2:8080/'
 
 const rootReducer = combineReducers({
 	calc: calculatorReducer,
