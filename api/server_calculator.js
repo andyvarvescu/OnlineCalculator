@@ -65,7 +65,7 @@ http.createServer(async (req, res) => {
             'Access-Control-Allow-Headers': '*'
         });
         if (clientResult == null) {
-            res.write(result)
+            res.write(JSON.stringify({ result }))
         }
         res.end()
     }

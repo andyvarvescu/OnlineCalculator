@@ -26,7 +26,7 @@ const calculateResult = async (firstNumber, secondNumber, operation, serverCalcu
                 params: { firstNumber, secondNumber, operation }
             })
 
-            return response.data
+            return response.data.result
         }
         catch (err) {
             return err
