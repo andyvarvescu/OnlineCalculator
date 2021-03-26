@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The Operation component rendering renders with given state from redux store 1`] = `
+exports[`The Operation component rendering renders with given state from mocked store 1`] = `
 <Provider
   store={
     Object {

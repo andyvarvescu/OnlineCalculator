@@ -10,7 +10,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_HISTORY_SUCCESS:
             return updateObject(state, { history: action.history })
 
-        case actionTypes.DELETE_HISTORY:
+        case actionTypes.DELETE_HISTORY_SUCCESS:
             return { history: [] }
             
         default:

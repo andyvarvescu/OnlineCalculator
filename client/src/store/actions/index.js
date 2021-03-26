@@ -3,9 +3,11 @@ export {
     setSecondNumber,
     setOperation,
     changeCalculationType,
-    getResult
+    getResult,
+    setResult
 } from './calculator'
 export {
     fetchHistory,
-    deleteHistory
+    deleteHistory,
+    deleteHistorySuccess
 } from './history'

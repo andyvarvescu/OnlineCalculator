@@ -24,8 +24,13 @@ const wrapper = mount(
 )
 
 describe("The Operation component rendering", () => {
-    it("renders with given state from redux store", () => {
+    it("renders with given state from mocked store", () => {
         expect(toJSON(wrapper)).toMatchSnapshot()
+    })
+
+    it("displays the right label for first number input", () => {
+        const label = wrapper.find("Input").at(0).prop("label")
+        expect(label).toBe("First number:")
     })
 
     it("displays the value from state for the first number", () => {
@@ -33,9 +38,19 @@ describe("The Operation component rendering", () => {
         expect(firstNumber).toBe(initialState.calc.firstNumber)
     })
 
+    it("displays the right label for second number input", () => {
+        const label = wrapper.find("Input").at(1).prop("label")
+        expect(label).toBe("Second number:")
+    })
+
     it("displays the value from state for the second number", () => {
         const secondNumber = wrapper.find("Input").at(1).prop("value")
         expect(secondNumber).toBe(initialState.calc.secondNumber)
+    })
+
+    it("displays the right label for operation dropdown", () => {
+        const label = wrapper.text()
+        expect(label).toEqual(expect.stringContaining("Operation :"))
     })
 
     it("displays the value from state as the default operation value", () => {

@@ -6,13 +6,16 @@ export const fetchHistorySuccess = (history) => ({
     history
 })
 
+export const deleteHistorySuccess = () => ({
+    type: actionTypes.DELETE_HISTORY_SUCCESS
+})
 
 export const deleteHistory = () => {
     return async (dispatch) => {
         try {
             await axios.get('/server_calculator.js/delHistory')
 
-            dispatch({ type: actionTypes.DELETE_HISTORY })
+            return dispatch(deleteHistorySuccess())
         }
         catch (err) {
             console.log("error received = ", err)
